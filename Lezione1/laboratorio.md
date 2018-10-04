@@ -103,35 +103,31 @@ l'opzione `<comando> --help`.
   ~$ pwd
   ```
   (print working directory)
-
-1. Per elencare tutti i files e cartelle presenti nella directory in cui ci troviamo:
+2. Per elencare tutti i files e cartelle presenti nella directory in cui ci troviamo:
   ```bash
   ~$ ls
   ```
   (list). Se invece usiamo il comando `ls -l` (cioè `ls` con l'opzione `-l`)
   molti dettagli saranno mostrati come proprietario, permessi di accesso,
   dimensione file, ecc.
-
-1. Per creare una nuova cartella:
+3. Per creare una nuova cartella:
   ```bash
   ~$ mkdir <nome_nuova_cartella>
   ```
   (make directory). Se aggiungiamo l'opzione `mkdir -p` tutte le parent directories
   saranno create.  
-
-1. Per cancellare un file o cartella:
+4. Per creare un file vuoto:
+  ```bash
+  ~$ touch <nome_file>
+  ```
+5. Per cancellare un file o cartella:
   ```bash
   ~$ rm <file>
   # oppure per cartelle:
   ~$ rm -r <directory>  
   ```
   dove comando remove è stato chiamato con l'opzione `-r` (recursive)
-
-1. Per creare un file vuoto:
-  ```bash
-  ~$ touch <nome_file>
-  ```
-1. Per navigare tra cartelle:
+6. Per navigare tra cartelle:
   ```bash
   ~$ cd <cartella>
   ```
@@ -139,8 +135,7 @@ l'opzione `<comando> --help`.
   ```bash
   ~$ cd ..
   ```
-
-1. Per vedere il contenuto di in file senza aprirlo:
+7. Per vedere il contenuto di in file senza aprirlo:
   ```bash
   ~$ less <file>
   ~$ more <file>
