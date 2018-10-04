@@ -1,4 +1,5 @@
 # Laboratorio di informatica (1/12)
+### Prof. Stefano Carrazza - Corso C - 2018/19
 
 **Riassunto:** Per la seduta odierna proponiamo un primo contatto al sistema
 operativo Linux con istruzioni e esercizi per l'utilizzo dell'ambiente desktop
@@ -45,16 +46,16 @@ La distribuzione Fedora (Linux) è installata su tutte le macchine.
 
 - Navigare sul menu `Applications` e aprire l'editor di testo chiamato `gedit`.
 
-- Tutti i commandi per l'esplorazione del file system e per la manipolazione
+- Tutti i comandi per l'esplorazione del file system e per la manipolazione
   dei files possono essere effettuate direttamente con l'ambiente Desktop, pero
   siccome dovremmo programmare queste operazioni verranno fatte col terminale.
 
 ## Esercizio 2 - Il terminale e bash
 
 Per programmare utilizzeremmo un emulatore di terminale per Linux basato sul
-linguaggio per commandi chiamato `bash`.
+linguaggio per comandi chiamato `bash`.
 - Cercate e aprite il programma chiamato `Terminal`.
-- Provate a lanciare il commando bash che semplicemente restituisce un vostro
+- Provate a lanciare il comando bash che semplicemente restituisce un vostro
   input direttamente su schermo.
   - Scrivete
     ```bash
@@ -62,15 +63,15 @@ linguaggio per commandi chiamato `bash`.
     ```
     seguito dal tasto `Invio/Enter`.
 
-    *Nota: tutti i commandi bash devono essere seguiti dal tasto `Invio` affinché
+    *Nota: tutti i comandi bash devono essere seguiti dal tasto `Invio` affinché
     siano eseguiti.*
 
-- Per conoscere i commandi più comuni in bash potete inviare il commando:
+- Per conoscere i comandi più comuni in bash potete inviare il comando:
   ```bash
   ~$ help
   ```
-- Per conoscere dettagli dei commandi potete usare il commando `man` che apre
-  la pagina del manuale bash con i dettagli del commando, e.g.:
+- Per conoscere dettagli dei comandi potete usare il comando `man` che apre
+  la pagina del manuale bash con i dettagli del comando, e.g.:
   ```bash
   ~$ man echo
   ```
@@ -78,7 +79,7 @@ linguaggio per commandi chiamato `bash`.
 
 - Per ulteriori informazioni ed esempi potete visitare: [questo link](https://it.wikipedia.org/wiki/Bash)
 
-*Nota: esistono altri linguaggi per commandi ma ormai bash è uno dei più popolari.*
+*Nota: esistono altri linguaggi per comandi ma ormai bash è uno dei più popolari.*
 
 ## Esercizio 3 - Il file system
 
@@ -93,11 +94,11 @@ contengono programmi, dati e configurazioni di sistema che permettono al compute
  dentro la propria directory **home**. Per esempio, l'utente chiamato `john` ha come
  cartella home: `/home/john`.
 
-Proponiamo adesso una lista di commandi/esercizi utili per navigare e creare files.
-Per tutti i commandi resta sempre valido l'utilizzo del commando `man` oppure
-l'opzione `<commando> --help`.
+Proponiamo adesso una lista di comandi/esercizi utili per navigare e creare files.
+Per tutti i comandi resta sempre valido l'utilizzo del comando `man` oppure
+l'opzione `<comando> --help`.
 
-1. Per visualizzare il nome della directory in cui ci troviamo, usiamo il commando:
+1. Per visualizzare il nome della directory in cui ci troviamo, usiamo il comando:
   ```bash
   ~$ pwd
   ```
@@ -107,7 +108,7 @@ l'opzione `<commando> --help`.
   ```bash
   ~$ ls
   ```
-  (list). Se invece usiamo il commando `ls -l` (cioè `ls` con l'opzione `-l`)
+  (list). Se invece usiamo il comando `ls -l` (cioè `ls` con l'opzione `-l`)
   molti dettagli saranno mostrati come proprietario, permessi di accesso,
   dimensione file, ecc.
 
@@ -124,7 +125,7 @@ l'opzione `<commando> --help`.
   # oppure per cartelle:
   ~$ rm -r <directory>  
   ```
-  dove commando remove è stato chiamato con l'opzione `-r` (recursive)
+  dove comando remove è stato chiamato con l'opzione `-r` (recursive)
 
 1. Per creare un file vuoto:
   ```bash
@@ -145,7 +146,7 @@ l'opzione `<commando> --help`.
   ~$ more <file>
   ~$ cat <file>
   ```
-  il commando `cat` viene inoltre impiegato per concatenare files, e.g. `cat file1 file2 > file3`.  
+  il comando `cat` viene inoltre impiegato per concatenare files, e.g. `cat file1 file2 > file3`.  
 
 Come esercizio creare la struttura cartelle seguente:
 ```bash
@@ -157,7 +158,7 @@ Come esercizio creare la struttura cartelle seguente:
 
 ## Esercizio 4 - Copiare e spostare files
 
-Per copiare e spostare files utilizziamo i seguenti commandi:
+Per copiare e spostare files utilizziamo i seguenti comandi:
 - Per copiare:
   ```bash
   ~$ cp <file_da_copiare> <directory_in_cui_copiare>
@@ -192,7 +193,7 @@ Come esercizio proviamo a creare un file usando gedit:
   scrivere un contenuto qualunque, salvare il file e chiudere `gedit`.
 2. controllare il contenuto di questo nuovo file con `cat`.
 3. lanciare nuovamente `gedit` ma in modalità *background*, cioè il terminale
-  resterà libero per ricevere nuovi commandi mentre `gedit` è attivo.
+  resterà libero per ricevere nuovi comandi mentre `gedit` è attivo.
   ```bash
   ~$ gedit file1.txt &
   ```
@@ -248,18 +249,18 @@ usando `ssh` e `scp`. Da notare però che per motivi di sicurezza le connessioni
 dirette da remoto non sono sempre possibili dovuti a regole firewall oppure la
 mancanza di software opportuno per tali operazioni.
 
-- Per accedere da remoto ad un computer raggiungibile sulla rete usiamo il commando:
+- Per accedere da remoto ad un computer raggiungibile sulla rete usiamo il comando:
   ```bash
   ~$ ssh <username>@<indirizzo_computer>
   ```
   dove per `<indirizzo_computer>` intendiamo l'IP oppure il suo dominio da rete.
   Questo metodo vi permetterà di entrare nella macchina remota e lavorare.
-  Eseguendo il commando `ssh -X <username>@<indirizzo_computer>` sarete capaci
+  Eseguendo il comando `ssh -X <username>@<indirizzo_computer>` sarete capaci
   di inoltrare l'output delle applicazioni grafiche da remoto.
 
-- Per copiare files da remoto utilizziamo il commando `scp`:
+- Per copiare files da remoto utilizziamo il comando `scp`:
   ```bash
   ~$ scp <username>@<indirizzo_computer>:<file> <file_destinazione>
   ```
-  Questo commando funziona in modo analogo a `cp`, quindi si possono copiare
+  Questo comando funziona in modo analogo a `cp`, quindi si possono copiare
   intere cartelle aggiungendo l'opzione `cp -r`.
