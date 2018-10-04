@@ -1,0 +1,265 @@
+# Laboratorio di informatica (1/12)
+
+**Riassunto:** Per la seduta odierna proponiamo un primo contatto al sistema
+operativo Linux con istruzioni e esercizi per l'utilizzo dell'ambiente desktop
+e i rispettivi strumenti utili per il corso di informatica.
+
+## Regole
+
+- Il computer dovrebbe essere accesso. Il monitor può essere in
+  standby quindi basta muovere il mouse o premere qualche lettera della tastiera
+  per riaccenderlo.
+
+- In caso che il computer sia effettivamente spento procedere ad accenderlo.
+
+- Non spegnere il computer alla fine del corso. Fare semplicemente *Log-Out* per
+  scollegarvi.
+
+## Registrazione e login
+
+Prima di utilizzare come **username** e **password** la propria credenziale
+di posta elettronica dell'ateneo, dovete registrarvi via:
+
+[https://registrazione.unicloud.unimi.it/](https://registrazione.unicloud.unimi.it/)
+
+da rete eduroam dell'ateneo, oppure direttamente presso la postazione in aula
+307 e/o 309.
+
+Se il computer mostra il login del sistema operativo Windows, passare il mouse
+nella regione centrale in alto e cliccare sulla X. Dopodiché, selezionare
+l'entrata contente la stringa `lin` per passare all'ambiente Linux che sarà
+utilizzato durante il corso.
+
+Prima di fare login, controllare se il **Caps Lock** è disattivato.
+
+Ricordare sempre di effettuare il **Log-Out** una volta terminata la seduta.
+
+## Esercizio 1 - Ambientarsi in Linux
+
+La distribuzione Fedora (Linux) è installata su tutte le macchine.
+- Analizzare l'ambiente Desktop, individuare i menu e l'opzione di **Log-Out**.
+- Navigare sul menu `Applications` e trovare il browser internet `Firefox`, e
+  aprire la pagina web con il contenuto del corso:
+
+  [https://github.com/scarrazza/informatica2018](https://github.com/scarrazza/informatica2018)
+
+- Navigare sul menu `Applications` e aprire l'editor di testo chiamato `gedit`.
+
+- Tutti i commandi per l'esplorazione del file system e per la manipolazione
+  dei files possono essere effettuate direttamente con l'ambiente Desktop, pero
+  siccome dovremmo programmare queste operazioni verranno fatte col terminale.
+
+## Esercizio 2 - Il terminale e bash
+
+Per programmare utilizzeremmo un emulatore di terminale per Linux basato sul
+linguaggio per commandi chiamato `bash`.
+- Cercate e aprite il programma chiamato `Terminal`.
+- Provate a lanciare il commando bash che semplicemente restituisce un vostro
+  input direttamente su schermo.
+  - Scrivete
+    ```bash
+    ~$ echo "Hello World!"
+    ```
+    seguito dal tasto `Invio/Enter`.
+
+    *Nota: tutti i commandi bash devono essere seguiti dal tasto `Invio` affinché
+    siano eseguiti.*
+
+- Per conoscere i commandi più comuni in bash potete inviare il commando:
+  ```bash
+  ~$ help
+  ```
+- Per conoscere dettagli dei commandi potete usare il commando `man` che apre
+  la pagina del manuale bash con i dettagli del commando, e.g.:
+  ```bash
+  ~$ man echo
+  ```
+  per chiudere la pagina del manuale premere semplicemente il tasto `q` sulla tastiera.
+
+- Per ulteriori informazioni ed esempi potete visitare: [questo link](https://it.wikipedia.org/wiki/Bash)
+
+*Nota: esistono altri linguaggi per commandi ma ormai bash è uno dei più popolari.*
+
+## Esercizio 3 - Il file system
+
+I dati contenuti nel disco fisso del sistema sono strutturati in cartelle
+(*directories*). In generale, nei sistemi UNIX la directory di base, chiamata
+**root** (da non confondere con il nome dell'account che a privilegi amministrativi),
+viene indicata con il simbolo `/`. Dentro questa cartella troviamo sottocartelle che
+contengono programmi, dati e configurazioni di sistema che permettono al computer di
+ funzionare, e.g. `/usr/`, `/bin/`, `/home/`, ecc.
+
+ Tutti gli utenti hanno previlegi di scrittura e lettura per i files che si trovano
+ dentro la propria directory **home**. Per esempio, l'utente chiamato `john` ha come
+ cartella home: `/home/john`.
+
+Proponiamo adesso una lista di commandi/esercizi utili per navigare e creare files.
+Per tutti i commandi resta sempre valido l'utilizzo del commando `man` oppure
+l'opzione `<commando> --help`.
+
+1. Per visualizzare il nome della directory in cui ci troviamo, usiamo il commando:
+  ```bash
+  ~$ pwd
+  ```
+  (print working directory)
+
+1. Per elencare tutti i files e cartelle presenti nella directory in cui ci troviamo:
+  ```bash
+  ~$ ls
+  ```
+  (list). Se invece usiamo il commando `ls -l` (cioè `ls` con l'opzione `-l`)
+  molti dettagli saranno mostrati come proprietario, permessi di accesso,
+  dimensione file, ecc.
+
+1. Per creare una nuova cartella:
+  ```bash
+  ~$ mkdir <nome_nuova_cartella>
+  ```
+  (make directory). Se aggiungiamo l'opzione `mkdir -p` tutte le parent directories
+  saranno create.  
+
+1. Per cancellare un file o cartella:
+  ```bash
+  ~$ rm <file>
+  # oppure per cartelle:
+  ~$ rm -r <directory>  
+  ```
+  dove commando remove è stato chiamato con l'opzione `-r` (recursive)
+
+1. Per creare un file vuoto:
+  ```bash
+  ~$ touch <nome_file>
+  ```
+1. Per navigare tra cartelle:
+  ```bash
+  ~$ cd <cartella>
+  ```
+  (change directory) oppure se vogliamo entrare nella cartella precedente:
+  ```bash
+  ~$ cd ..
+  ```
+
+1. Per vedere il contenuto di in file senza aprirlo:
+  ```bash
+  ~$ less <file>
+  ~$ more <file>
+  ~$ cat <file>
+  ```
+  il commando `cat` viene inoltre impiegato per concatenare files, e.g. `cat file1 file2 > file3`.  
+
+Come esercizio creare la struttura cartelle seguente:
+```bash
+  /home/<username>/corso_di_informatica
+    |- Lezione1
+          |- data.txt # lasciarlo vuoto    
+```
+
+
+## Esercizio 4 - Copiare e spostare files
+
+Per copiare e spostare files utilizziamo i seguenti commandi:
+- Per copiare:
+  ```bash
+  ~$ cp <file_da_copiare> <directory_in_cui_copiare>
+  ```
+  (copy). Se vogliamo copiare una cartella basta aggiungere l'opzione recursive, i.e. `cp -r`.
+- Se vogliamo muovere un file oppure rinominare un file, usiamo:
+  ```bash
+  ~$ mv <file> <nuovo_nome_file>
+  ```
+
+Provate a copiare il file `data.txt` creato nell'esercizio precedente dentro la
+cartella `Lezione1` e poi cambiate il suo nome da `data.txt` a `README.md`.
+
+## Esercizio 5 - Editor di testo
+
+Esistono innumerevoli programmi per editare files su Linux, che capiscono il tipo
+di contenuto in base al suffisso del file. Per esempio un file con suffisso `.txt` è
+considerato come puro testo, invece un file con `.cc` è un file di programmazione in C++, quindi si attiveranno dei colori per la sintassi utilizzata.
+
+Sono disponibili su tutte le macchine i seguenti editor di testo:
+- `gedit`: editor generale, user-friendly, molto facile e intuitivo da usare.
+- `vim`: editor molto flessibile e con supporto a innumerevoli plug-ins. Richiede tempo
+  per imparare ad utilizzare in modo proficuo.
+- `emacs`: editor molto flessibile, contestualmente simile a vim, richiede però tempo
+  per imparare ad utilizzare in modo proficuo.
+
+Come esercizio proviamo a creare un file usando gedit:
+1. aprire il terminale, scegliere una cartella dentro la propria home e eseguire:
+  ```bash
+  ~$ gedit file1.txt
+  ```
+  scrivere un contenuto qualunque, salvare il file e chiudere `gedit`.
+2. controllare il contenuto di questo nuovo file con `cat`.
+3. lanciare nuovamente `gedit` ma in modalità *background*, cioè il terminale
+  resterà libero per ricevere nuovi commandi mentre `gedit` è attivo.
+  ```bash
+  ~$ gedit file1.txt &
+  ```
+4. Cancellare `file1.txt`.
+
+A questo punto proviamo a creare un file per codice in C++:
+1. aprire il terminale e eseguire
+  ```bash
+  ~$ gedit file.cc
+  ```
+2. scrivere la seguente riga
+  ```c++
+  #include <iostream>
+  ```
+  noterete che si attiveranno dei colori diversi per ogni parola: `gedit` ha
+  riconosciuto che il vostro file contiene sintassi del C++.
+3. Cancellare `file.cc`.
+
+## Esercizio 6 - Clonare con git
+
+Git è uno strumento utilissimo quando si programma, permette di salvare i propri
+files su server remoti, mantenere lo storico delle modifiche e lavorare in modo collaborativo. Per esempio [https://github.com](https://github.com)
+è molto popolare per progetti open-source a grande scala.
+
+Spiegare l'utilizzo di `git` è al di fuori dello scopo di questo tutorial, ma se avete tempo studiarlo è ottima idea che vi aiuterà a salvare i vostri codici e dati in maniera efficiente.
+
+A titolo di esempio potete scaricare questa guida e tutto il materiale del corso semplicemente facendo:
+```bash
+~$ git clone https://github.com/scarrazza/informatica2018.git
+```
+e poi entrare nella cartella `informatica2018` con
+```bash
+~$ cd informatica2018
+```
+
+Ogni settimana le nuove lezioni saranno pubblicate sul repositorio `git`, per ottenere
+gli aggiornamenti basterà effettuare un `pull`, i.e.:
+```bash
+~$ cd informatica2018
+~$ git pull
+```
+
+A questo punto provare ad aprire i documenti appena clonati con `gedit`, e nel caso di PDFs con `evince`.
+
+## Esercizio 8 - Accesso remoto e copia dei file
+
+Siccome programmare richiede allenamento e studio, vi capiterà di lavorare
+su diverse macchine, sia in laboratorio che sul vostro computer personale. Il
+metodo che raccomandiamo per salvare il vostro lavoro consiste in utilizzare una semplice *chiavetta USB* in cui saranno copiati tali files.
+
+Detto ciò, esistono metodi per la copia di files da remoto utilizzando la rete
+usando `ssh` e `scp`. Da notare però che per motivi di sicurezza le connessioni
+dirette da remoto non sono sempre possibili dovuti a regole firewall oppure la
+mancanza di software opportuno per tali operazioni.
+
+- Per accedere da remoto ad un computer raggiungibile sulla rete usiamo il commando:
+  ```bash
+  ~$ ssh <username>@<indirizzo_computer>
+  ```
+  dove per `<indirizzo_computer>` intendiamo l'IP oppure il suo dominio da rete.
+  Questo metodo vi permetterà di entrare nella macchina remota e lavorare.
+  Eseguendo il commando `ssh -X <username>@<indirizzo_computer>` sarete capaci
+  di inoltrare l'output delle applicazioni grafiche da remoto.
+
+- Per copiare files da remoto utilizziamo il commando `scp`:
+  ```bash
+  ~$ scp <username>@<indirizzo_computer>:<file> <file_destinazione>
+  ```
+  Questo commando funziona in modo analogo a `cp`, quindi si possono copiare
+  intere cartelle aggiungendo l'opzione `cp -r`.
