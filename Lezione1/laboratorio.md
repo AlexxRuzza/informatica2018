@@ -103,6 +103,7 @@ l'opzione `<comando> --help`.
   ~$ pwd
   ```
   (print working directory)
+  
 2. Per elencare tutti i files e cartelle presenti nella directory in cui ci troviamo:
   ```bash
   ~$ ls
@@ -110,16 +111,19 @@ l'opzione `<comando> --help`.
   (list). Se invece usiamo il comando `ls -l` (cioè `ls` con l'opzione `-l`)
   molti dettagli saranno mostrati come proprietario, permessi di accesso,
   dimensione file, ecc.
+  
 3. Per creare una nuova cartella:
   ```bash
   ~$ mkdir <nome_nuova_cartella>
   ```
   (make directory). Se aggiungiamo l'opzione `mkdir -p` tutte le parent directories
   saranno create.  
+  
 4. Per creare un file vuoto:
   ```bash
   ~$ touch <nome_file>
   ```
+  
 5. Per cancellare un file o cartella:
   ```bash
   ~$ rm <file>
@@ -127,6 +131,7 @@ l'opzione `<comando> --help`.
   ~$ rm -r <directory>  
   ```
   dove comando remove è stato chiamato con l'opzione `-r` (recursive)
+  
 6. Per navigare tra cartelle:
   ```bash
   ~$ cd <cartella>
@@ -135,6 +140,7 @@ l'opzione `<comando> --help`.
   ```bash
   ~$ cd ..
   ```
+  
 7. Per vedere il contenuto di in file senza aprirlo:
   ```bash
   ~$ less <file>
@@ -186,12 +192,15 @@ Come esercizio proviamo a creare un file usando gedit:
   ~$ gedit file1.txt
   ```
   scrivere un contenuto qualunque, salvare il file e chiudere `gedit`.
+  
 2. controllare il contenuto di questo nuovo file con `cat`.
+
 3. lanciare nuovamente `gedit` ma in modalità *background*, cioè il terminale
   resterà libero per ricevere nuovi comandi mentre `gedit` è attivo.
   ```bash
   ~$ gedit file1.txt &
   ```
+  
 4. Cancellare `file1.txt`.
 
 A questo punto proviamo a creare un file per codice in C++:
@@ -199,12 +208,14 @@ A questo punto proviamo a creare un file per codice in C++:
   ```bash
   ~$ gedit file.cc
   ```
+  
 2. scrivere la seguente riga
   ```c++
   #include <iostream>
   ```
   noterete che si attiveranno dei colori diversi per ogni parola: `gedit` ha
   riconosciuto che il vostro file contiene sintassi del C++.
+  
 3. Cancellare `file.cc`.
 
 ## Esercizio 6 - Clonare con git
