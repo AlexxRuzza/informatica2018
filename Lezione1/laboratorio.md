@@ -77,6 +77,8 @@ linguaggio per comandi chiamato `bash`.
   ```
   per chiudere la pagina del manuale premere semplicemente il tasto `q` sulla tastiera.
 
+- Potete usare le freccie su e giù per recuperare i commandi che avete già utilizzati.
+
 - Per ulteriori informazioni ed esempi potete visitare: [questo link](https://it.wikipedia.org/wiki/Bash)
 
 *Nota: esistono altri linguaggi per comandi ma ormai bash è uno dei più popolari.*
@@ -130,7 +132,9 @@ l'opzione `<comando> --help`.
   # oppure per cartelle:
   ~$ rm -r <directory>  
   ```
-  dove comando remove è stato chiamato con l'opzione `-r` (recursive)
+  dove comando remove è stato chiamato con l'opzione `-r` (recursive).
+  Fare attenzione all'utilizzo di `*`, i.e. `rm -rf *` significa cancellare tutti
+  i files e cartelle presenti nella directory attuale.
   
 6. Per navigare tra cartelle:
   ```bash
@@ -140,6 +144,8 @@ l'opzione `<comando> --help`.
   ```bash
   ~$ cd ..
   ```
+  se usate `cd` questo vi portera alla vostra home. Invece `cd -` vi porterà
+  alla cartella che avete visitato precedentemente.
   
 7. Per vedere il contenuto di in file senza aprirlo:
   ```bash
@@ -169,6 +175,8 @@ Per copiare e spostare files utilizziamo i seguenti comandi:
   ```bash
   ~$ mv <file> <nuovo_nome_file>
   ```
+ Ricordare che le directories possono essere rappresentate da notazione relativa rispetto
+ alla cartella attuale sia in notazione assoluta.
 
 Provate a copiare il file `data.txt` creato nell'esercizio precedente dentro la
 cartella `Lezione1` e poi cambiate il suo nome da `data.txt` a `README.md`.
@@ -217,6 +225,13 @@ A questo punto proviamo a creare un file per codice in C++:
   riconosciuto che il vostro file contiene sintassi del C++.
   
 3. Cancellare `file.cc`.
+
+Con la tastiera italiana i seguenti simboli utili per programmazione sono:
+```
+{ = Alt Gr + Shift + è
+} = Alt Gr + Shift + +
+~ = Alt Gr + ì
+```
 
 ## Esercizio 6 - Clonare con git
 
