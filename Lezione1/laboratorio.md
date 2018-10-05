@@ -44,7 +44,7 @@ La distribuzione Fedora (Linux) è installata su tutte le macchine.
 
   [https://github.com/scarrazza/informatica2018](https://github.com/scarrazza/informatica2018)
 
-- Navigare sul menu `Applications` e aprire l'editor di testo chiamato `gedit`.
+- Navigare sul menu `Applications` e aprire l'editor di testo chiamato `Text Editor`.
 
 - Tutti i comandi per l'esplorazione del file system e per la manipolazione
   dei files possono essere effettuate direttamente con l'ambiente Desktop, pero
