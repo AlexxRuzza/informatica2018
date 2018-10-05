@@ -259,7 +259,7 @@ gli aggiornamenti basterà effettuare un `pull`, i.e.:
 
 A questo punto provare ad aprire i documenti appena clonati con `gedit`, e nel caso di PDFs con `evince`.
 
-## Esercizio 8 - Accesso remoto e copia dei file
+## Esercizio 7 - Accesso remoto e copia dei file
 
 Siccome programmare richiede allenamento e studio, vi capiterà di lavorare
 su diverse macchine, sia in laboratorio che sul vostro computer personale. Il
