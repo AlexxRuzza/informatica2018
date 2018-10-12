@@ -32,11 +32,11 @@ e controllare l'output.
 
 Scrivere un programma in C++ in cui si calcola l'area e perimetro di un rettangolo.
 
-1. Aprire un nuovo file `esercizio2.cc`, dichiarare delle variabili di tipo doppia precisione (`double`) per la `base` e `altezza` del triangolo.
+1. Aprire un nuovo file `esercizio2.cc`, dichiarare delle variabili di tipo doppia precisione (`double`) per la `base` e `altezza` del rettangolo.
 
 2. Assegnare una `base` di `5.0` e una altezza di `2.0`.
 
-3. Scrivere le formule per l'area e perimetro del triangolo usando variabili C++.
+3. Scrivere le formule per l'area e perimetro del rettangolo usando variabili C++.
 
 4. Stampare su schermo i risultati usando `cout`.
 
