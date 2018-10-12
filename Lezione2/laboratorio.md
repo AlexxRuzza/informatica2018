@@ -101,7 +101,7 @@ indentazione.
 Copiare il file `esercizio2.cc` (area/perimetro rettangolo) in un nuovo file `esercizio5.cc` e aggiornare il makefile con il nuovo programma, i.e. `prog5`.
 
 Modificare il programma in modo che le variabili che corrispondono alla base
-e altezza del triangolo vengano lette da terminale con chiamate a `cin`.
+e altezza del rettangolo vengano lette da terminale con chiamate a `cin`.
 
 ## Esercizio 6 - Notazione per cout
 
