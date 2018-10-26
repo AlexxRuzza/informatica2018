@@ -97,33 +97,3 @@ Utilizzare la struttura di controllo `switch` per stampare il vostro nome a part
 2. Creare una condizione `switch` in cui nel caso del vostro numero
 matricola stampa il vostro nome, mentre nel caso di detault stampa il
 messaggio errore: "Matricola non trovata".
-
-## Esercizio 5 - Calcolare media (input da terminale)
-
-Scrivere un programma in C++ capace di calcolare la media di numeri introdotti
-da terminale.
-
-1. Chiedere all'utente quanti numeri vuole introdurre. Salvare tale valore in
-una variabile di tipo `int n`.
-
-2. Costruire un loop usando l'istruzione `for` che chiede all'utente di introdurre un numero di tipo `double`.
-
-3. Creare una variabile `double sum = 0;` e incrementarla all'interno del loop usando i nuovi valori introdotti dall'utente.
-
-4. Stampare su schermo la media di tutti i numeri come `sum/n`.
-
-## Esercizio 6 - Calcolare media (input da file)
-
-1. Scaricare il file con dati copiando e incollando il commando seguente su terminale:
-```bash
-wget https://raw.githubusercontent.com/scarrazza/informatica2018/master/Lezione4/data.dat
-```
-I dati contengono 1000 numeri corrispondenti a misure fatte in laboratorio della costante di accelerazione di gravità `g`.
-
-2. Leggere tutti i numeri da file usando un loop `for` infinito, controllato dalla condizione `eof`.
-
-3. Salvare in una variable `double sum = 0.0;` la somma incrementale dei numeri.
-
-4. Fare lo stesso per il conteggio del numero totale di elementi.
-
-5. Calcolare media e stamparla su schermo, verificare che il suo valore sia vicino a `g=9.7803184`.
